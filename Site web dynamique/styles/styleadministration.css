@@ -4,8 +4,8 @@ body, html {
     font-family: Arial, sans-serif;
     height: 100%;
     width: 100%;
-    overflow: auto; /* Permet le défilement vertical */
-    background-image: url('../images/desertf.png'); /* Remplacez par le bon chemin vers l'image */
+    overflow: auto; 
+    background-image: url('../images/desertf.png'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -46,20 +46,20 @@ header .top-menu a:hover {
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Permet d'aligner les éléments au début */
+    justify-content: flex-start; 
     align-items: center;
-    height: 100%; /* Rempli toute la hauteur disponible */
+    height: 100%; 
     width: 100%;
-    padding-top: 100px; /* Assure que le contenu ne soit pas caché derrière le header */
-    overflow-y: auto; /* Permet le défilement vertical */
+    padding-top: 100px; 
+    overflow-y: auto; 
 }
 
 section {
-    background-color: rgba(255, 255, 255, 0.8); /* Fond semi-transparent */
+    background-color: rgba(255, 255, 255, 0.8); 
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 80%; /* Ajustez la largeur selon vos besoins */
+    width: 80%; 
     margin-bottom: 20px;
 }
 
