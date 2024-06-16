@@ -1,0 +1,48 @@
+#!/bin/bash
+
+#Fill in the variables to take the desired measurements
+salle1=E208
+salle2=B103
+data1=co2
+data2=temperature
+
+#Creating a function
+fonction()
+{
+	#Raw data retrieval without selection
+	messbrut=$(mosquitto_sub -h mqtt.iut-blagnac.fr -t AM107/by-room/$2/data -C 1)
+	
+	#Time retrieval
+	timetable=$(date +"%H:%M:%S")
+	date=$(date +"%Y-%m-%d")
+	
+	#Select the required data
+	data=$(echo $messbrut | jq '.[0].'$1)
+	
+	nom_capteur=$1$2
+	
+	#Insertion in a variable of the SQL query to be executed to fill the table
+	insert_data="INSERT INTO Mesures (ID_Unique, date, horaire, valeur, nom_capteur) VALUES ('', '$date', '$timetable', '$data', '$nom_capteur' );"
+	
+	#Send the SQL request and close database connection
+	/opt/lampp/bin/mysql -h localhost -D sae23 -u ferrigno -pferrigno23 -e "$insert_data"
+	/opt/lampp/bin/mysql -h localhost -D sae23 -u ferrigno -pferrigno23 -e "EXIT"
+	
+}	
+
+#Launch the function for different rooms and data simultaneously
+fonction "$data1" "$salle1" &
+fonction "$data2" "$salle1" &
+fonction "$data1" "$salle2" &
+fonction "$data2" "$salle2" &
+
+#Wait for all functions to finish
+wait
+
+#Wait for all functions to finish
+nombre_de_lignes=$(/opt/lampp/bin/mysql -h localhost -D sae23 -u ferrigno -pferrigno23 -N -e "SELECT COUNT(*) FROM Mesures;")
+
+#Creation of a condition to delete data from the Measurements table when the number of rows exceeds 288, i.e. 12 hours
+if [ $nombre_de_lignes -gt 288 ]; then
+	/opt/lampp/bin/mysql -h localhost -D sae23 -u ferrigno -pferrigno23 -e "DELETE FROM Mesures;"
+fi
