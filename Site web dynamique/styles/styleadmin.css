@@ -1,0 +1,128 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-image: url('../images/desertf.png'); /* Replace with the correct path to the image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.logo {
+    font-size: 1.5em;
+    color: white;
+}
+
+.top-menu {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    width: 100%;
+}
+
+.top-menu a {
+    margin-left: 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.top-menu a:hover {
+    color: #ccc;
+}
+
+.login-form {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Adjust width as needed */
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.login-form input {
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-form button:hover {
+    background-color: #45a049;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin: 20px 0;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 15px;
+    background-color: #33333300;
+    color: white;
+    text-align: center;
+}
+
+footer ul li {
+    float: left;
+    width: 33%;
+    list-style-type: none;
+}
+
+footer ul li:first-child {
+    text-align: left;
+}
+
+footer ul li:last-child {
+    float: right;
+    text-align: right;
+}

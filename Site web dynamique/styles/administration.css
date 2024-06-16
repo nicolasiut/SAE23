@@ -1,0 +1,108 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    width: 100%;
+    overflow: auto; /* Permet le défilement vertical */
+    background-image: url('../images/desertf.png'); /* Remplacez par le bon chemin vers l'image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Permet d'aligner les éléments au début */
+    align-items: center;
+    height: 100%; /* Rempli toute la hauteur disponible */
+    width: 100%;
+    padding-top: 100px; /* Assure que le contenu ne soit pas caché derrière le header */
+    overflow-y: auto; /* Permet le défilement vertical */
+}
+
+section {
+    background-color: rgba(255, 255, 255, 0.8); /* Fond semi-transparent */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Ajustez la largeur selon vos besoins */
+    margin-bottom: 20px;
+}
+
+section h2 {
+    color: black;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+form label {
+    margin-bottom: 5px;
+    color: black;
+}
+
+form input, form select, form button {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 15px;
+    background-color: #33333300;
+    color: white;
+    text-align: center;
+}
+
+footer ul li {
+    float: left;
+    width:33%;
+    list-style-type: none;
+}
+
+footer ul li:first-child {
+    text-align: left;
+}
+
+footer ul li:last-child {
+    float:right;
+    text-align: right;
+}
+je veux que en haut ca ressemble comme sur la capture d'ecran en mode le tirre etl'accueil

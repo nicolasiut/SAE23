@@ -1,0 +1,153 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.container {
+    background-image: url('../images/desert.jpg'); /* Replace with the correct path to the image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    height: 100vh;
+    width: 100%;
+    padding-top: 80px; /* Adjust padding to prevent overlap with the header */
+    box-sizing: border-box;
+}
+
+.mention {
+    background-image: url('../images/desert.jpg'); /* Replace with the correct path to the image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+.surligneb {
+    background-color: rgba(0, 255, 255, 0.407);
+  }
+
+.logo {
+    font-size: 1.5em;
+    color: white;
+}
+
+.top-menu {
+    display: flex;
+}
+
+.top-menu a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.top-menu a:hover {
+    color: #ccc;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 0.5em 0;
+}
+
+p {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+    background-color: white;
+    color: black;
+}
+
+footer {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 0.8em;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #ccc;
+}
+
+#first a {
+    color: #1e90ff; /* DodgerBlue color for better contrast */
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+#first a:hover {
+    color: #ff4500; /* OrangeRed color for hover effect */
+    text-decoration: none; /* Remove underline on hover */
+}
+
+footer 
+{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 15px;
+  background-color: #33333300;
+  color: white;
+  text-align: center;
+}
+
+footer ul li
+{
+  float: left;
+  width:33%;
+  list-style-type: none;
+}
+
+footer ul li:first-child
+{
+  text-align: left;
+}
+
+footer ul li:last-child
+{
+  float:right;
+  text-align: right;
+}
